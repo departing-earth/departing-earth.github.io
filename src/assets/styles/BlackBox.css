@@ -52,6 +52,7 @@
     text-align: center;
     position: relative;
     height: 100vh; /* Adjust the height to accommodate the rocket animation */
+    /* overflow: hidden; Prevents the page from expanding when the rocket moves */
 }
 
 .ExploreButton {
