@@ -31,6 +31,7 @@
 
 .BlackBoxMainContainer p {
     padding-top: 50px; 
+    font-size: 1.5rem;
 }
 
 
@@ -45,6 +46,7 @@
 }
 
 .ExploreButtonWrapper {
+  padding-top: 10px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -53,18 +55,19 @@
 }
 
 .ExploreButton {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   height: 6vh;
   background-color: #1E3A8A;
   cursor: pointer;
   color: white;
-  text-align: center;
   font-size: 2rem;
-  padding-bottom: 10px;
+  border-radius: 10px;
 }
 
 
 .ExploreButton:hover {
-    background-color: #8da8f4; /* Complementary color */
+    background-color: #708bd7; /* Complementary color */
+    
   }
   
   .ExploreButton::before {
