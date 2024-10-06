@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import '../assets/styles/BlackBox.css';
 import BlackBoxButton from './BlackBoxButton';
 
-const BlackBox = ({ title, planetname, maintext, blur, changeBlur }) => {
+const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }) => {
     const [showBlackBox, setShowBlackBox] = useState(true); 
     const [showDrawButton, setShowDrawButton] = useState(false); // Manages Draw Button visibility
     const canvasRef = useRef(null);
@@ -52,7 +52,8 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur }) => {
                     <p>{maintext}</p>
                     <div className="ExploreButtonWrapper">
                         {/* View Image Button */}
-                        <BlackBoxButton onClick={imageDisplayClick}>
+                        <BlackBoxButton onClick={imageDisplayClick}
+                         changeMoons = {toggleMoons}>
                             View Image
                         </BlackBoxButton>
                     </div>
@@ -61,7 +62,8 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur }) => {
                 // Render the canvas or Draw Constellation button after View Image is clicked
                 <div>
                     {showDrawButton && (
-                        <BlackBoxButton onClick={() => setShowDrawButton(false)}>
+                        <BlackBoxButton onClick={() => setShowDrawButton(false)}
+                        changeMoons = {toggleMoons}>
                             Draw Constellation
                         </BlackBoxButton>
                     )}

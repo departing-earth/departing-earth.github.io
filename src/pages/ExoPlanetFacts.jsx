@@ -13,8 +13,12 @@ const FactsPage = () => {
       setIsBlur(!isBlur);
   };
 
-  const toggleMoonsVisibility = () => {
-    setShowMoons(!showMoons);
+  const handleViewImageClick = () => {
+    setShowMoons(false);
+  };
+
+  const handleGoBackClick = () => {
+    setShowMoons(true); // Re-show the moons when user "goes back"
   };
 
     // Show loading text if no data is received
@@ -42,7 +46,7 @@ const FactsPage = () => {
                     onDrawConstellationClick={() => {}}
                     blur={isBlur}
                     changeBlur={changeBlur}
-                    toggleMoons={toggleMoonsVisibility}
+                    toggleMoons={handleViewImageClick}
                 />
             )}
             {showMoons && exoplanetData && (
