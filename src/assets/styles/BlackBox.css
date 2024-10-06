@@ -2,7 +2,7 @@
   margin: 0;
   padding: 30px;
   height: 85vh;
-  min-width: 50%;
+  width: 600px;
   background-color: rgb(65, 65, 65);
   background: linear-gradient(135deg, rgba(65, 65, 65, 0.9), rgba(25, 25, 25, 0.9)); /* Gradient effect */
   color: white;
@@ -32,9 +32,11 @@
 }
 
 .BlackBoxMainContainer p {
-  padding-top: 50px; 
+  padding-top: 30px;
+  padding-bottom: 30px; 
   font-size: 1.5rem;
   color: lightgray;
+  max-width: 550px;
 }
 
 @keyframes fadeIn {
@@ -134,4 +136,24 @@ border-radius: 10px;
 
 .SubmitButton:hover {
   background-color: #2980b9;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded corners of the handle */
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the handle when hovered */
 }
