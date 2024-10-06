@@ -27,15 +27,15 @@
 }
 
 .fact-box {
-    background-color: #fff; /* White background for the text box */
-    color: #000; /* Text color */
+    background-color: #878787; /* Light gray background for a softer look */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     width: 500px; /* Set a fixed width or use a percentage like 80% */
     height: 50vh;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow for more depth */
     position: relative; /* Position for the close button */
+    overflow-y: auto; /* Make content scrollable if it overflows */
 }
 
 /* Adjusting the styling of the list */
@@ -63,8 +63,15 @@
 
 .fact-box h1 {
     font-size: 2rem; /* Use rem for responsive sizing based on root font size */
+    color: #000000; /* Darker color for the heading */
 }
 
+.fact-box li {
+    margin: 10px 0; /* Spacing between items */
+    line-height: 1.6; /* Adjust line-height for better spacing */
+    font-size: 1.3rem; /* Larger text size for better readability */
+    color: #000000; /* Darker color for the heading */
+}
 @keyframes fadeIn {
     from {
         opacity: 0; /* Start from fully transparent */

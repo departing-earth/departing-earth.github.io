@@ -17,6 +17,7 @@ function App() {
                     <Route path="/wormhole" element={<Wormhole />} />
                     <Route path="/facts" element={<FactsPage />} />
                     <Route path="/canvas" element={<CanvasTest />} />
+                    <Route path="/story" element={<StoryPage />} />
                 </Routes>
             </div>
         </Router>

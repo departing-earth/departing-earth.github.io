@@ -48,6 +48,9 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
         canvas.addEventListener('mouseleave', stopDrawing);
     };
 
+    const handleSubmitDrawing = () => {
+        alert("Your constellation has been submitted!");
+    };
     return (
         <div>
             {showBlackBox ? (
@@ -77,6 +80,7 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
                         </BlackBoxButton>
                     )}
                     {!showDrawButton && (
+                        <>
                         <canvas
                             ref={canvasRef}
                             className="DrawingCanvas"
@@ -84,7 +88,12 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
                             width={window.innerWidth}
                             height={window.innerHeight}
                         ></canvas>
+                        <button className="SubmitButton" onClick={handleSubmitDrawing}>
+                    Submit Drawing
+                    </button>
+                    </>
                     )}
+                    
                 </div>
             )}
         </div>
