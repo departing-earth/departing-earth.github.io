@@ -10,6 +10,11 @@
     transition: transform 0.5s ease; /* Optional smooth transition */
     will-change: transform; /* Hint to the browser for optimizing rendering */
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planet-image:hover {
+    transform: scale(1.1); /* Enlarge the image to 110% of its original size */
 }
 
 .fact-overlay {

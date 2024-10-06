@@ -26,7 +26,6 @@ const FactsPage = () => {
         return (
             <div className="error-message">
                 <p>Error: Unable to load exoplanet data. Please try again.</p>
-                {/* Button to go back two pages */}
                 <button onClick={() => history.go(-3)} className="retry-button">
                     Go to previous exoplanet
                 </button>
