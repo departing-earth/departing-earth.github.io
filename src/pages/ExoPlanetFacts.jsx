@@ -39,7 +39,7 @@ const FactsPage = () => {
         <div className="FactsPageContainer">
             {exoplanetData && (
                 <BlackBox
-                    title="Welcome To"
+                    title="WELCOME TO"
                     planetname={exoplanetData.name}
                     maintext={`Click on the moons to see facts about ${exoplanetData.name}`}
                     onDrawConstellationClick={() => {}}

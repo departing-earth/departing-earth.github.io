@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     overflow: hidden; /* Prevents scrollbars */
     height: 100%; /* Make sure it takes the full height */
-    font-family: "Sixtyfour Convergence", sans-serif;
+    
 }
 
 @keyframes expand {
@@ -26,6 +26,7 @@ html, body {
     overflow: hidden;
     position: relative; /* Position relative for absolute positioning of children */
     background-color: black;
+    font-family: "Sixtyfour Convergence", sans-serif;
 }
 
 .Wormhole {

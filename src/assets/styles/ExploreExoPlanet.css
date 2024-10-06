@@ -31,6 +31,7 @@ input[type=number] {
   cursor: pointer;
   transition: background-color 0.3s;
   border: 1px solid #FF4500; /* Red border to match theme */
+  font-family: 'Space Grotesk', cursive; /* Use a fantasy font */
 }
 
 button:hover {
