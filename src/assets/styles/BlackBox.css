@@ -89,15 +89,15 @@ border-radius: 10px;
 
 @keyframes rocketFly {
   0% {
-    bottom: 280px;
+    bottom: 60px;
     opacity: 0;
   }
   50% {
-    bottom: 330px;
+    bottom: 90px;
     opacity: 1;
   }
   100% {
-    bottom: 360px;
+    bottom: 120px;
     opacity: 0;
   }
 }
