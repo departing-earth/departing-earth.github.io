@@ -2,7 +2,9 @@ import React, { useRef, useState } from 'react';
 import '../assets/styles/BlackBox.css';
 import BlackBoxButton from './BlackBoxButton';
 import ExploreExoPlanet from './ExploreExoPlanet';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
+import { sendImage } from "../api/fetch.js";
+
 const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }) => {
     const navigate = useNavigate(); // Use useNavigate instead of useHistory
     const [showExplore, setShowExplore] = useState(false);
@@ -49,9 +51,71 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
         canvas.addEventListener('mouseleave', stopDrawing);
     };
 
-    const handleSubmitDrawing = () => {
-        alert("Your constellation has been submitted!");
-        navigate('/story'); 
+    const handleSubmitDrawing = async () => {
+        // const canvas = canvasRef.current;
+        // const ctx = canvas.getContext('2d');
+
+        // const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        // for (let i = 0; i < imageData.data.length; i += 4) {
+        //     // Check if the pixel is white
+        //     if (imageData.data[i] === 255 && 
+        //         imageData.data[i + 1] === 255 && 
+        //         imageData.data[i + 2] === 255) {
+        //         imageData.data[i] = 0;
+        //         imageData.data[i + 1] = 0;
+        //         imageData.data[i + 2] = 0;
+        //     }
+        // }
+
+        // ctx.putImageData(imageData, 0 ,0);
+        // const imageLink = canvas.toDataURL('image/webp');
+
+        // const downloadLink = document.createElement('a');
+        // downloadLink.href = imageLink;
+        // downloadLink.download = 'constellation_drawing.webp';  // Filename for the saved image
+    
+        // // Programmatically click the link to trigger the download
+        // downloadLink.click();
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+
+        // Create a new canvas for the white background
+        const newCanvas = document.createElement('canvas');
+        const newCtx = newCanvas.getContext('2d');
+
+        // Set the dimensions of the new canvas
+        newCanvas.width = canvas.width;
+        newCanvas.height = canvas.height;
+
+        // Fill the new canvas with a white background
+        newCtx.fillStyle = 'white';
+        newCtx.fillRect(0, 0, newCanvas.width, newCanvas.height);
+
+        // Get the image data from the original canvas
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const newData = newCtx.getImageData(0, 0, canvas.width, canvas.height);
+
+        // Draw the black strokes onto the new canvas
+        for (let i = 0; i < imageData.data.length; i += 4) {
+            // Check if the pixel is black (or close to black)
+            if (imageData.data[i] === 255 && 
+                imageData.data[i + 1] === 255 && 
+                imageData.data[i + 2] === 255) {
+                // Set the corresponding pixel on the new canvas to black
+                // newCtx.fillStyle = 'black';
+                // newCtx.fillRect((i / 4) % canvas.width, Math.floor((i / 4) / canvas.width), 1, 1);
+                newData.data[i] = 0;
+                newData.data[i + 1] = 0;
+                newData.data[i + 2] = 0;
+            }
+        }
+
+        newCtx.putImageData(newData, 0, 0);
+        const newImageData = newCanvas.toDataURL('image/webp');
+
+        const story = await sendImage({ data: newImageData });
+        console.log("story: " + story);
+        navigate('/story', { state: { story } });
 
     };
     return (

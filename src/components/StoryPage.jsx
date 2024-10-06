@@ -47,8 +47,10 @@ const StoryPage = () => {
         }
     }, [story]); // Only run this effect when `story` changes
 
+    // const story = location.state?.story;
+    
     const handleBackClick = () => {
-        navigate(-1); // Navigate back to the previous page
+        navigate(-1);
     };
 
     return (

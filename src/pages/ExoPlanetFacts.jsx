@@ -8,7 +8,8 @@ const FactsPage = () => {
   const [isBlur, setIsBlur] = useState(true);
   const [showMoons, setShowMoons] = useState(true); // New state to control moon visibility
     const location = useLocation(); // Access the location object
-    const exoplanetData = location.state?.planetData; // Get the planet data from the state
+    const exoplanetFacts = location.state?.planetFacts; // Get the planet data from the state
+    // const exostarData = location.state?.starData;
     const changeBlur = () => {
       setIsBlur(!isBlur);
   };
@@ -22,7 +23,7 @@ const FactsPage = () => {
   };
 
     // Show loading text if no data is received
-    if (!exoplanetData) {
+    if (!exoplanetFacts) {  //|| !exostarData) {
         return (
             <div className="error-message">
                 <p>Error: Unable to load exoplanet data. Please try again.</p>
@@ -37,42 +38,39 @@ const FactsPage = () => {
       <>
       <div className={isBlur ? "BlurredImageB" : "notBlur"}></div>
         <div className="FactsPageContainer">
-            {exoplanetData && (
+            {exoplanetFacts && (
                 <BlackBox
-                    title="WELCOME TO"
-                    planetname={exoplanetData.name}
-                    maintext={`Click on the moons to see facts about ${exoplanetData.name}`}
+                    title="Welcome To"
+                    planetname={exoplanetFacts.pl_name}
+                    maintext={`Click on the moons to see facts about ${exoplanetFacts.pl_name}`}
                     onDrawConstellationClick={() => {}}
                     blur={isBlur}
                     changeBlur={changeBlur}
                     toggleMoons={handleViewImageClick}
                 />
             )}
-            {showMoons && exoplanetData && (
+            {showMoons && exoplanetFacts && (
                 <div className="planet-corners">
                     <ZoomablePlanet
-                        planetName={exoplanetData.name}
+                        planetName={exoplanetFacts.pl_name}
                         facts={[
-                            `Distance from Earth: ${exoplanetData.distanceFromEarth} light-years`,
-                            `Mass: ${exoplanetData.mass} times Earth's mass`,
+                            `Distance from Earth: ${exoplanetFacts.disc_year} light-years`,
                         ]}
                     />
                     <ZoomablePlanet
-                        planetName={exoplanetData.name}
+                        planetName={exoplanetFacts.pl_name}
                         facts={[
-                            `Radius: ${exoplanetData.radius} times Earth's radius`,
-                            `Temperature: ${exoplanetData.temperature} K`,
+                            `Discovery year: ${exoplanetFacts.disc_year}`
                         ]}
                     />
                     <ZoomablePlanet
-                        planetName={exoplanetData.name}
-                        facts={[`Orbit Time: ${exoplanetData.orbitTime} days`]}
+                        planetName={exoplanetFacts.pl_name}
+                        facts={[`Orbit Time: ${exoplanetFacts.pl_orbper} days`]}
                     />
                     <ZoomablePlanet
-                        planetName={exoplanetData.name}
+                        planetName={exoplanetFacts.pl_name}
                         facts={[
-                            `Distance from Earth: ${exoplanetData.distanceFromEarth} light-years`,
-                            `Mass: ${exoplanetData.mass} times Earth's mass`,
+                            `Surface Gravity: ${exoplanetFacts.st_logg} m/s^2`,
                         ]}
                     />
                 </div>
