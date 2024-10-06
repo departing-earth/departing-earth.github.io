@@ -34,12 +34,14 @@ const StoryPage = () => {
     };
 
     return (
-        <div className="story-page">
-            {/* <h1>Your Story</h1> */}
-            <p>{story}</p>
-            <button onClick={handleBackClick} className="back-button">
-                Go Back
-            </button>
+        <div className='storyContainer'>
+            <div className="story-page">
+                {/* <h1>Your Story</h1> */}
+                <p>{story}</p>
+                <button onClick={handleBackClick} className="back-button">
+                    Go Back
+                </button>
+            </div>
         </div>
     );
 };
