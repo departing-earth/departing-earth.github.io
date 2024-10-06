@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Wormhole from "./pages/Wormhole";
 import FactsPage from "./pages/ExoPlanetFacts";
 import CanvasTest from "./pages/CanvasTest";
+import StoryPage from "./components/StoryPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './StoryPage.css'; // Importing the CSS file
+import '../assets/styles/StoryPage.css'; // Importing the CSS file
 
 const StoryPage = () => {
     const navigate = useNavigate();
