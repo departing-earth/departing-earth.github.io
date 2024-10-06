@@ -1,6 +1,7 @@
 /* Apply the font to your body or specific elements */
 .ExoButtons {
   font-size: 1rem;
+  
 }
 
 
@@ -22,13 +23,14 @@ input[type=number] {
 .Buttons {
   width: 30%;
   height: 6vh;
-  background-color: #1E3A8A;
-  color: #ffffff;
+  background-color: #333; /* Dark background for the button */
+  color: lightgray; /* Text color */
   border: none;
   border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  border: 1px solid #FF4500; /* Red border to match theme */
 }
 
 button:hover {
@@ -37,12 +39,13 @@ button:hover {
 
 /* Style for the form container */
 .ExoForm {
-  background-color: #000000; /* Change the background color */
+  background-color: #333; /* Dark background for the button */
   padding: 20px; /* Add some padding inside the form */
   border-radius: 10px; /* Optional: make the corners rounded */
   width: 400px; /* Set the width of the form */
   margin: 7px auto; /* Center the form horizontally */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border: 1px solid #FF4500; /* Red border to match theme */
 }
 
 /* Style for the input field */
@@ -59,9 +62,9 @@ button:hover {
 .ExoForm button {
   width: 100%; /* Make the button take full width */
   padding: 10px; /* Add padding inside the button */
-  background-color: #1E3A8A; /* Button background color */
-  color: rgb(255, 255, 255); /* Button text color */
-  border: none; /* Remove button border */
+  background-color: #202020; /* Dark background for the button */
+  color: lightgray; /* Text color */
+  border: 1px solid #FF4500; /* Red border to match theme */
   border-radius: 5px; /* Optional: make the button rounded */
   cursor: pointer; /* Show a pointer cursor on hover */
   font-size: 1rem; /* Increase font size */
@@ -70,7 +73,7 @@ button:hover {
 
 /* Button hover effect */
 .ExoForm button:hover {
-  background-color: #8da8f4; /* Complementary hover color */
+  background-color: #555; /* Change background on hover */
 }
 
 /* Add some spacing between the form and random button */

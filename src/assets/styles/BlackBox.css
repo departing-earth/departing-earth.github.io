@@ -12,6 +12,7 @@
   text-align: center;
   z-index: 10;
   box-shadow: 0 12px 24px rgba(245, 69, 0, 0.4), inset 0 2px 10px rgba(0, 0, 0, 0.3); /* Outer and inner shadow */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 
 .BlackBoxMainContainer h1 {
@@ -59,10 +60,10 @@ padding-top: 10px;
 border: 1px solid #FF4500; /* Red border to match theme */
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 height: 6vh;
-background-color: #1E3A8A;
+background-color: #333; /* Dark background for the button */
 cursor: pointer;
-color: white;
-font-size: 2rem;
+color: lightgray; /* Text color */
+font-size: 1.5rem;
 border-radius: 10px;
 }
 

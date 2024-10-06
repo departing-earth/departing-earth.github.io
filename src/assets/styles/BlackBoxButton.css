@@ -9,6 +9,7 @@
     transition: background-color 0.3s; /* Smooth transition for hover effect */
     z-index: 2; /* Ensure it stays above the wormholes */
     margin-top: 2vh;
+    border: 1px solid #FF4500; /* Red border to match theme */
 }
 
 .blackBoxButton:hover {
