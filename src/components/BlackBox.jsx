@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import '../assets/styles/BlackBox.css';
 import BlackBoxButton from './BlackBoxButton';
 
-const BlackBox = ({ title, planetname, maintext, blur, changeBlur }) => {
+const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }) => {
     const [showBlackBox, setShowBlackBox] = useState(true);
     const [showDrawConstellation, setShowDrawConstellation] = useState(false);
     const canvasRef = useRef(null);
@@ -49,10 +49,12 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur }) => {
                     <h2>{planetname}</h2>
                     <p>{maintext}</p>
                     <div className="ExploreButtonWrapper">
-                        <BlackBoxButton onClick={changeBlur}>
+                        <BlackBoxButton onClick={changeBlur}
+                        changeMoons = {toggleMoons}>
                             View Image
                         </BlackBoxButton>
-                        <BlackBoxButton onClick={imageDisplayClick}>
+                        <BlackBoxButton onClick={imageDisplayClick} 
+                        changeMoons = {toggleMoons}>
                             Draw Constellation
                         </BlackBoxButton>
                     </div>

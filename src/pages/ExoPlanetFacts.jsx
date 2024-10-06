@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/styles/ExoPlanetFacts.css";
 import BlackBox from "../components/BlackBox";
 import ZoomablePlanet from "../components/ZoomablePlanet";
 import { useLocation } from "react-router-dom"; // Import useLocation to access the location object
 
 const FactsPage = () => {
+  const [isBlur, setIsBlur] = useState(true);
+  const [showMoons, setShowMoons] = useState(true); // New state to control moon visibility
     const location = useLocation(); // Access the location object
     const exoplanetData = location.state?.planetData; // Get the planet data from the state
+    const changeBlur = () => {
+      setIsBlur(!isBlur);
+  };
+
+  const toggleMoonsVisibility = () => {
+    setShowMoons(!showMoons);
+  };
 
     // Show loading text if no data is received
     if (!exoplanetData) {
@@ -22,6 +31,8 @@ const FactsPage = () => {
     }
 
     return (
+      <>
+      <div className={isBlur ? "BlurredImageB" : "notBlur"}></div>
         <div className="FactsPageContainer">
             {exoplanetData && (
                 <BlackBox
@@ -29,11 +40,12 @@ const FactsPage = () => {
                     planetname={exoplanetData.name}
                     maintext={`Click on the moons to see facts about ${exoplanetData.name}`}
                     onDrawConstellationClick={() => {}}
-                    blur={true}
-                    changeBlur={() => {}}
+                    blur={isBlur}
+                    changeBlur={changeBlur}
+                    toggleMoons={toggleMoonsVisibility}
                 />
             )}
-            {exoplanetData && (
+            {showMoons && exoplanetData && (
                 <div className="planet-corners">
                     <ZoomablePlanet
                         planetName={exoplanetData.name}
@@ -63,6 +75,7 @@ const FactsPage = () => {
                 </div>
             )}
         </div>
+        </>
     );
 };
 
