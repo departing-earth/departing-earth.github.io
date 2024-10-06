@@ -1,3 +1,19 @@
+.MainErrorContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .BlurredImageB {
   background-image: url('../images/MilkyWay.svg');
   background-size: cover;
@@ -48,7 +64,7 @@
 }
 
 .retry-button {
-  background-color: #007bff; /* Bootstrap primary color */
+  background-color: #424344; /* Bootstrap primary color */
   color: white;
   border: none;
   border-radius: 5px;
@@ -59,5 +75,5 @@
 }
 
 .retry-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #88898b; /* Darker shade on hover */
 }

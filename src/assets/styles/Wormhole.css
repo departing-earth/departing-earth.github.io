@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     overflow: hidden; /* Prevents scrollbars */
     height: 100%; /* Make sure it takes the full height */
+    font-family: "Sixtyfour Convergence", sans-serif;
 }
 
 @keyframes expand {
