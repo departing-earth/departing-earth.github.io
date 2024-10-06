@@ -3,24 +3,24 @@ import '../assets/styles/BlackBox.css';
 import ExploreExoPlanet from './ExploreExoPlanet';
 import BlackBoxButton from './BlackBoxButton';
 
-const BlackBox = ({ title, planetname, maintext, onDrawConstellationClick, blur, changeBlur }) => {
+const BlackBox = ({ title, planetname, maintext, onDrawConstellationClick, showDrawConstellation, blur, changeBlur }) => {
     const [showExplore, setShowExplore] = useState(false);
-    const [showBlackBox, setShowBlackBox] = useState(true); // State to manage visibility of BlackBox
+    const [showBlackBox, setShowBlackBox] = useState(true);
 
-    // Function to toggle visibility of the ExploreExoPlanet component
+    // Toggle ExploreExoPlanet visibility
     const handleButtonClick = () => {
-        setShowExplore(prevShowExplore => !prevShowExplore); // Toggle the value
+        setShowExplore(prevShowExplore => !prevShowExplore);
     };
 
-    // Function to hide BlackBox and show Draw Constellation button
+    // Handle "View Image" click (removing the blur)
     const imageDisplayClick = () => {
-        setShowBlackBox(false); // Hide the BlackBox when imageDisplay is clicked
+        setShowBlackBox(false);
+        changeBlur(); // Call the function passed in to remove blur
     };
-
 
     return (
         <div>
-            {blur ? ( // Render BlackBox if showBlackBox is true
+            {showBlackBox ? ( // Render BlackBox if it's visible
                 <div className='BlackBoxMainContainer'>
                     <h1>{title}</h1>
                     <h2>{planetname}</h2>
@@ -29,20 +29,21 @@ const BlackBox = ({ title, planetname, maintext, onDrawConstellationClick, blur,
                         <button className='ExploreButton' onClick={handleButtonClick}>
                             Explore Exoplanet
                         </button>
-                        <BlackBoxButton onClick={changeBlur}>
+                        <BlackBoxButton onClick={imageDisplayClick}>
                             View Image
                         </BlackBoxButton>
-                        {/* Conditionally render ExploreExoPlanet when the button is clicked */}
                         {showExplore && <ExploreExoPlanet />}
                     </div>
                 </div>
             ) : (
-                // Render this when BlackBox is hidden
-                <div>
-                    <BlackBoxButton className="DrawConstellationButton" onClick={onDrawConstellationClick}>
-                        Draw Constellation
-                    </BlackBoxButton>
-                </div>
+                // When the image is visible (BlackBox hidden)
+                showDrawConstellation ? (
+                    <div>
+                        <BlackBoxButton className="DrawConstellationButton" onClick={onDrawConstellationClick}>
+                            Draw Constellation
+                        </BlackBoxButton>
+                    </div>
+                ) : null
             )}
         </div>
     );

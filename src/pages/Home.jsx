@@ -5,10 +5,15 @@ import ExploreExoPlanet from "../components/ExploreExoPlanet";
 
 const Home = () => {
     const [isBlur, setIsBlur] = useState(true);
+    const [showDrawConstellation, setDrawConstellation] = useState(true);
 
     const changeBlur = () => {
         setIsBlur(!isBlur);
     };
+
+    const constellationClick = () => {
+        setDrawConstellation(false);
+    }
 
     return (
         <>
@@ -18,6 +23,8 @@ const Home = () => {
                     title="WELCOME TO"
                     planetname="EARTH"
                     maintext="Bein really nice fellas"
+                    onDrawConstellationClick={constellationClick}
+                    showDrawConstellation={showDrawConstellation}
                     blur={isBlur}
                     changeBlur={changeBlur}
                 />
