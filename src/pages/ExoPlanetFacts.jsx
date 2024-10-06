@@ -7,6 +7,10 @@ import { useLocation } from 'react-router-dom'; // Import useLocation to access 
 const FactsPage = () => {
   const location = useLocation(); // Access the location object
   const exoplanetData = location.state?.planetData; // Get the planet data from the state
+<<<<<<< HEAD
+=======
+  // const [isBlur, setIsBlur] = useState(true);
+>>>>>>> origin/alex-changes
 
   // Show loading text if no data is received
   if (!exoplanetData) {
@@ -19,8 +23,21 @@ const FactsPage = () => {
     );
   }
 
+<<<<<<< HEAD
   return (
     <div className="FactsPageContainer">
+=======
+  // const [isBlur, setIsBlur] = useState(true);
+  // useEffect(() => { setIsBlur(true) }, [isBlur])
+  
+  // const changeBlur = () => {
+  //   setIsBlur(!isBlur);
+  // }
+
+  return (
+    <div className="FactsPageContainer">
+      {/* <div className={isBlur ? "BlurredImage" : "notBlur"}></div> */}
+>>>>>>> origin/alex-changes
       {exoplanetData && (
         <BlackBox
           title="Welcome To"

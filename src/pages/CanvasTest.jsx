@@ -19,7 +19,7 @@ const CanvasTest = () => {
             <div className={isBlur ? "BlurredImage" : "notBlur"}></div>
             <div className='CanvasTest'>
                 {isBlur ? <BlackBox title="WELCOME TO" planetname="EARTH"
-                    maintext="SUCKIN CRAZY ON BLACK STROKES" onDrawConstellationClick={() => { }} blur={isBlur} changeBlur={changeBlur}>
+                    maintext="Hello, we are really nice fellas!" onDrawConstellationClick={() => { }} blur={isBlur} changeBlur={changeBlur}>
                 </BlackBox> : <></>}
             </div>
         </>

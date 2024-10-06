@@ -3,6 +3,7 @@ import './App.css'
 import Home from './pages/Home'
 import Wormhole from './pages/Wormhole'
 import FactsPage from './pages/ExoPlanetFacts'
+import CanvasTest from './pages/CanvasTest'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/wormhole" element={<Wormhole />} />
             <Route path="/facts" element={<FactsPage />} />
+<<<<<<< HEAD
+=======
+            <Route path="/canvas" element={<CanvasTest />} />
+>>>>>>> origin/alex-changes
           </Routes>
         </div>
       </Router>
