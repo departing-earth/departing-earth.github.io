@@ -1,0 +1,21 @@
+.CanvasTest {
+    font-family: 'space Grotesk', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+
+.BlurredImage {
+    background-image: url('../images/MilkyWay.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    filter: blur(2.5px);
+    z-index: -1;
+}

@@ -1,0 +1,99 @@
+.BlackBoxMainContainer {
+    margin: 0;
+    padding: 30px;
+    height: 85vh;
+    min-width: 50%;
+    /* width: 550px; */
+    background-color: rgb(65, 65, 65);
+    background: linear-gradient(135deg, rgba(65, 65, 65, 0.9), rgba(25, 25, 25, 0.9)); /* Gradient effect */
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(0, 0, 0, 0.3); /* Outer and inner shadow */
+}
+
+.BlackBoxMainContainer h1 {
+    font-size: 70px;    
+    font-weight: 700;
+    /* animation: fadeIn 5s forwards; */
+}
+
+.BlackBoxMainContainer h2 {
+    font-size: 60px;
+    font-weight: 700;
+    color: red;
+    filter: drop-shadow(0 0 10px red);
+    animation: fadeIn 5s forwards;
+}
+
+.BlackBoxMainContainer p {
+    padding-top: 50px; 
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start from fully transparent */
+    }
+    to {
+        opacity: 1; /* End at fully opaque */
+    }
+}
+
+.ExploreButtonWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    height: 100vh; /* Adjust the height to accommodate the rocket animation */
+    /* overflow: hidden; Prevents the page from expanding when the rocket moves */
+}
+
+.ExploreButton {
+  height: 6vh;
+  background-color: #1E3A8A;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+.ExploreButton:hover {
+    background-color: #8da8f4; /* Complementary color */
+  }
+  
+  .ExploreButton::before {
+    content: '🚀';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .ExploreButton:hover::before {
+    opacity: 1;
+    animation: rocketFly 1s ease-out forwards;
+  }
+  
+  @keyframes rocketFly {
+    0% {
+      bottom: 280px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 330px;
+      opacity: 1;
+    }
+    100% {
+      bottom: 360px;
+      opacity: 0;
+    }
+  }

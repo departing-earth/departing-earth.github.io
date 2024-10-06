@@ -1,0 +1,79 @@
+/* Apply the font to your body or specific elements */
+.ExoButtons {
+  font-size: 1rem;
+}
+
+
+/* Hide spinner in Chrome, Safari, Edge */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  /* Remove the default appearance */
+  margin: 0;
+  /* Reset margin */
+}
+
+/* Hide spinner in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Set appearance to textfield */
+}
+
+.Buttons {
+  width: 30%;
+  height: 10vh;
+  background-color: #1E3A8A;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #8da8f4;
+}
+
+/* Style for the form container */
+.ExoForm {
+  background-color: #000000; /* Change the background color */
+  padding: 20px; /* Add some padding inside the form */
+  border-radius: 10px; /* Optional: make the corners rounded */
+  width: 400px; /* Set the width of the form */
+  margin: 7px auto; /* Center the form horizontally */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Style for the input field */
+.ExoForm input {
+  width: 100%; /* Make the input field take full width */
+  padding: 10px; /* Add padding inside the input field */
+  margin-bottom: 10px; /* Add some space between the input and button */
+  border: 1px solid #ccc; /* Add a light border */
+  border-radius: 5px; /* Optional: make input corners rounded */
+  font-size: 1rem; /* Make the font size larger */
+}
+
+/* Style for the form submit button */
+.ExoForm button {
+  width: 100%; /* Make the button take full width */
+  padding: 10px; /* Add padding inside the button */
+  background-color: #1E3A8A; /* Button background color */
+  color: rgb(255, 255, 255); /* Button text color */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Optional: make the button rounded */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  font-size: 1rem; /* Increase font size */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Button hover effect */
+.ExoForm button:hover {
+  background-color: #8da8f4; /* Complementary hover color */
+}
+
+/* Add some spacing between the form and random button */
+.ExoButtons {
+  margin-top: 20px;
+}
