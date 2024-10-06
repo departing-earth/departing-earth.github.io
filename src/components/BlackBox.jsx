@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import '../assets/styles/BlackBox.css';
 import BlackBoxButton from './BlackBoxButton';
+import ExploreExoPlanet from './ExploreExoPlanet';
 
 const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }) => {
+    const [showExplore, setShowExplore] = useState(false);
     const [showBlackBox, setShowBlackBox] = useState(true); 
     const [showDrawButton, setShowDrawButton] = useState(false); // Manages Draw Button visibility
     const canvasRef = useRef(null);
@@ -12,6 +14,9 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
         setShowBlackBox(false);  // Hide the BlackBox
         setShowDrawButton(true); // Show the Draw Constellation button
         changeBlur();            // Turn off the blur
+    };
+    const handleButtonClick = () => {
+        setShowExplore(prevShowExplore => !prevShowExplore); // Toggle the value
     };
 
     // Drawing logic
@@ -51,11 +56,15 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
                     <h2>{planetname}</h2>
                     <p>{maintext}</p>
                     <div className="ExploreButtonWrapper">
+                    <button className='ExploreButton' onClick={handleButtonClick}>
+                            Explore Exoplanet
+                        </button>
                         {/* View Image Button */}
                         <BlackBoxButton onClick={imageDisplayClick}
                          changeMoons = {toggleMoons}>
                             View Image
                         </BlackBoxButton>
+                        {showExplore && <ExploreExoPlanet />}
                     </div>
                 </div>
             ) : (
