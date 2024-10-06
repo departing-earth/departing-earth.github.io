@@ -22,7 +22,12 @@ const Home = () => {
                 <BlackBox
                     title="WELCOME TO"
                     planetname="EARTH"
-                    maintext="Bein really nice fellas"
+                    maintext=" Get ready for the adventure of a lifetime! Earth
+                                is evolving, and humanity is on the brink of discovering 
+                                incredible new planets. You’ll encounter exoplanets filled with 
+                                vibrant colors, candy-floss clouds, and friendly alien 
+                                creatures eager to share their worlds with you. Let’s blast 
+                                off and make history together!"
                     onDrawConstellationClick={constellationClick}
                     showDrawConstellation={showDrawConstellation}
                     blur={isBlur}
