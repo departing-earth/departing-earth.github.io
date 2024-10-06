@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react';
 import '../assets/styles/BlackBox.css';
 import BlackBoxButton from './BlackBoxButton';
 import ExploreExoPlanet from './ExploreExoPlanet';
-
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }) => {
+    const navigate = useNavigate(); // Use useNavigate instead of useHistory
     const [showExplore, setShowExplore] = useState(false);
     const [showBlackBox, setShowBlackBox] = useState(true); 
     const [showDrawButton, setShowDrawButton] = useState(false); // Manages Draw Button visibility
@@ -50,6 +51,8 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
 
     const handleSubmitDrawing = () => {
         alert("Your constellation has been submitted!");
+        navigate('/story'); 
+
     };
     return (
         <div>

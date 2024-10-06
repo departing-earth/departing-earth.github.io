@@ -35,7 +35,7 @@ const StoryPage = () => {
 
     return (
         <div className="story-page">
-            <h1>Your Story</h1>
+            {/* <h1>Your Story</h1> */}
             <p>{story}</p>
             <button onClick={handleBackClick} className="back-button">
                 Go Back
