@@ -2,14 +2,16 @@ import React, { useRef, useState } from 'react';
 import '../assets/styles/BlackBox.css';
 import BlackBoxButton from './BlackBoxButton';
 
-const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }) => {
-    const [showBlackBox, setShowBlackBox] = useState(true);
-    const [showDrawConstellation, setShowDrawConstellation] = useState(false);
+const BlackBox = ({ title, planetname, maintext, blur, changeBlur }) => {
+    const [showBlackBox, setShowBlackBox] = useState(true); 
+    const [showDrawButton, setShowDrawButton] = useState(false); // Manages Draw Button visibility
     const canvasRef = useRef(null);
 
-    // Handle hiding the BlackBox and showing the canvas
+    // Handle hiding the BlackBox, showing the Draw Constellation button, and turning off the blur
     const imageDisplayClick = () => {
-        setShowBlackBox(false);
+        setShowBlackBox(false);  // Hide the BlackBox
+        setShowDrawButton(true); // Show the Draw Constellation button
+        changeBlur();            // Turn off the blur
     };
 
     // Drawing logic
@@ -49,26 +51,29 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
                     <h2>{planetname}</h2>
                     <p>{maintext}</p>
                     <div className="ExploreButtonWrapper">
-                        <BlackBoxButton onClick={changeBlur}
-                        changeMoons = {toggleMoons}>
+                        {/* View Image Button */}
+                        <BlackBoxButton onClick={imageDisplayClick}>
                             View Image
-                        </BlackBoxButton>
-                        <BlackBoxButton onClick={imageDisplayClick} 
-                        changeMoons = {toggleMoons}>
-                            Draw Constellation
                         </BlackBoxButton>
                     </div>
                 </div>
             ) : (
-                // Render the canvas when BlackBox is hidden and drawing is activated
+                // Render the canvas or Draw Constellation button after View Image is clicked
                 <div>
-                    <canvas
-                        ref={canvasRef}
-                        className="DrawingCanvas"
-                        onMouseDown={handleMouseDown}
-                        width={window.innerWidth}
-                        height={window.innerHeight}
-                    ></canvas>
+                    {showDrawButton && (
+                        <BlackBoxButton onClick={() => setShowDrawButton(false)}>
+                            Draw Constellation
+                        </BlackBoxButton>
+                    )}
+                    {!showDrawButton && (
+                        <canvas
+                            ref={canvasRef}
+                            className="DrawingCanvas"
+                            onMouseDown={handleMouseDown}
+                            width={window.innerWidth}
+                            height={window.innerHeight}
+                        ></canvas>
+                    )}
                 </div>
             )}
         </div>

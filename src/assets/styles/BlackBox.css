@@ -106,9 +106,10 @@ border-radius: 10px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  z-index: 20; /* Ensure the canvas is on top of the blurred image */
-  cursor: crosshair;
-  background: transparent; /* Ensure the canvas itself is clear */
+  z-index: 5; /* Ensure it's on top of the background image */
+  background: transparent;
+  pointer-events: auto;
 }
+
