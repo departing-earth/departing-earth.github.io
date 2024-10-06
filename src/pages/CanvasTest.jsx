@@ -22,6 +22,7 @@ const CanvasTest = () => {
                     maintext="Hello, we are really nice fellas!" onDrawConstellationClick={() => { }} blur={isBlur} changeBlur={changeBlur}>
                 </BlackBox> : <></>}
             </div>
+            
         </>
     );
 };

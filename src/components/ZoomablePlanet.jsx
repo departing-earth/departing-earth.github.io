@@ -31,7 +31,6 @@ const ZoomablePlanet = ({ planetName, facts }) => {
           <div className="fact-box">
             <button className="close-button" onClick={handleClose}>✖</button>
             <h1>{planetName}</h1>
-            {/* Changed from <p> to <ul> to render facts as a list */}
             <ul>
               {facts.map((fact, index) => ( // Map through facts and render each as a list item
                 <li key={index}>{fact}</li>
