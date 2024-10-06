@@ -1,39 +1,29 @@
-import { useState } from 'react'
-import './App.css'
-import Home from './pages/Home'
-import Wormhole from './pages/Wormhole'
-import FactsPage from './pages/ExoPlanetFacts'
-<<<<<<< HEAD
-import CanvasTest from './pages/CanvasTest'
-=======
->>>>>>> origin/arbert-changes
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { useState } from "react";
+import "./App.css";
+import Home from "./pages/Home";
+import Wormhole from "./pages/Wormhole";
+import FactsPage from "./pages/ExoPlanetFacts";
+import CanvasTest from "./pages/CanvasTest";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
 
     return (
-      <Router>
-        <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/wormhole" element={<Wormhole />} />
-            <Route path="/facts" element={<FactsPage />} />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            <Route path="/canvas" element={<CanvasTest />} />
->>>>>>> origin/alex-changes
-=======
->>>>>>> origin/arbert-changes
-          </Routes>
-        </div>
-      </Router>
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/wormhole" element={<Wormhole />} />
+                    <Route path="/facts" element={<FactsPage />} />
+                    <Route path="/canvas" element={<CanvasTest />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
-export default App
-
+export default App;
 
 // import React from 'react';
 // import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
