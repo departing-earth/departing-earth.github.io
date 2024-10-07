@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../assets/styles/Home.css";
 import BlackBox from "../components/BlackBox";
 import ExploreExoPlanet from "../components/ExploreExoPlanet";
-
+import StarBall from "../components/StarBall";
 const Home = () => {
     const [isBlur, setIsBlur] = useState(true);
     const [showDrawConstellation, setDrawConstellation] = useState(true);
@@ -34,6 +34,7 @@ const Home = () => {
                     changeBlur={changeBlur}
                 />
             </div>
+            
         </>
     );
 };

@@ -1,0 +1,11 @@
+/* BrightBall.css */
+
+.ball {
+    width: 1.3px; /* Set the width of the ball */
+    height: 1.3px; /* Set the height of the ball */
+    border-radius: 50%; /* Make it circular */
+    transition: filter 0.3s ease; /* Smooth transition for brightness changes */
+    margin: 50px auto; /* Center the ball in the container */
+    background-color: white;
+    z-index: -1;
+}
