@@ -15,7 +15,7 @@ async function fetchData(url) {
 }
 
 async function postData(url, payload, headers) {
-    console.log(payload);
+    console.log("posting with url: " + url);
     try {
         const response = await axios.post(url, payload, { 
             headers: headers
@@ -46,13 +46,11 @@ export async function getStarData() {
 export async function sendImage(payload) {
     const url = "https://de-server-d3cth9e3cvc8gjeh.canadacentral-01.azurewebsites.net/guess";
 
-    const imageData = payload.data.split(",")[1];
-    const formData = new FormData();
-    formData.append('file', imageData);
-
     const headers = {
         'Content-Type': 'multipart/form-data',
     }
 
-    return await postData(url, formData, headers);
+    console.log('here');
+
+    return await postData(url, payload.data, headers);
 }

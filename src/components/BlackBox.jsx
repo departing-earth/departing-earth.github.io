@@ -112,10 +112,14 @@ const BlackBox = ({ title, planetname, maintext, blur, changeBlur, toggleMoons }
 
         newCtx.putImageData(newData, 0, 0);
         const newImageData = newCanvas.toDataURL('image/webp');
-
-        const story = await sendImage({ data: newImageData });
-        console.log("story: " + story);
-        navigate('/story', { state: { story } });
+        console.log("here");
+        newCanvas.toBlob(async function(blob) {
+            const formData = new FormData();
+            formData.append('doodle', blob);
+            const story = await sendImage({ data: formData });
+            console.log("story: " + story);
+            navigate('/story', { state: { story } });
+        });
 
     };
     return (
